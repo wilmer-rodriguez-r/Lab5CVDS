@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Start Page</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+</head>
+<body>
+<h1>Hello World!</h1>
+<form name="myForm" action = "/lab5" onsubmit="return validateForm()" method="get">
+    <input type="text" name="id">
+    <button type="submit">Envíe su mensaje</button>
+</form>
+<script>
+function validateForm() {
+  let x = document.forms["myForm"]["id"].value;
+  if (isNaN(x) || x == "") {
+    alert("Id is not a number");
+    return false;
+  }
+}
+</script>
+</body>
+</html>
