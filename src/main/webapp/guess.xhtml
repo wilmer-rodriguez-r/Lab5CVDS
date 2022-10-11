@@ -10,6 +10,7 @@
         <p:outputLabel value="{guessBean.tries}"/>
         <p:outputLabel value="{guessBean.gameState}"/>
         <p:outputLabel value="{guessBean.price}"/>
+        <p:outputLabel value="{guessBean.pastTries}"/>
         <p:commandButton update="guess_form" actionListener="#{guessBean.guess(entrada.value)}" value="Adivinar"/>
         <p:commandButton update="guess_form" actionListener="#{guessBean.restart}" value="Reiniciar"/>
     </h:form>
