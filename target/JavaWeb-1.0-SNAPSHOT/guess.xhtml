@@ -7,9 +7,10 @@
     <h:form id="guess_form">
         <p:outputLabel id="Numero" value="#{guessBean.number}" style="display:none"/>
         <p:inputText type="number" title="Numero" binding="#{entrada}"/>
-        <p:outputLabel value="{guessBean.tries}"/>
-        <p:outputLabel value="{guessBean.gameState}"/>
-        <p:outputLabel value="{guessBean.price}"/>
+        <p:outputLabel value="#{guessBean.tries}"/>
+        <p:outputLabel value="#{guessBean.gameState}"/>
+        <p:outputLabel value="#{guessBean.pool}"/>
+        <p:outputLabel value="#{guessBean.pastTries}"/>
         <p:commandButton update="guess_form" actionListener="#{guessBean.guess(entrada.value)}" value="Adivinar"/>
         <p:commandButton update="guess_form" actionListener="#{guessBean.restart}" value="Reiniciar"/>
     </h:form>

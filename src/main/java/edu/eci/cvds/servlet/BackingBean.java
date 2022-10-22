@@ -2,11 +2,12 @@ package edu.eci.cvds.servlet;
 
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import java.util.ArrayList;
 import java.util.Random;
 
 @ManagedBean(name = "guessBean")
-@ApplicationScoped
+@SessionScoped
 public class BackingBean {
     private int number;
     private int tries;
@@ -21,7 +22,9 @@ public class BackingBean {
     public void guess(int guessNumber) {
         if(number == guessNumber) {
             gameState = "Ganaste con numero de intentos : " + tries + "Y con un premio de : " + pool;
-        } else {
+        } else if (pool == 0){
+            gameState = "Perdiste D:";
+        }else {
             pastTries.add(guessNumber);
             pool -= 10000;
             tries ++;
